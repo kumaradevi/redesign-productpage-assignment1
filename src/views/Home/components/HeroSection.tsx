@@ -2,6 +2,7 @@ import smallBG from '@/assets/images/main-bg-small.png';
 import { Button } from '@/components/ui';
 import HomeNavbar from '@/components/shared/HomeNav';
 import HcfSignupPopup from '@/components/shared/Popups/HcfSignupPopup';
+import ai from "@/assets/images/ai1.webp";
 
 interface HeroSectionProps {
     scrollToSection: (ref: React.RefObject<HTMLElement>) => void;
@@ -17,9 +18,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     aboutRef,
 }) => {
 
-
+ 
+    
     return (
-        <div className="!bg-[#01052f] w-full relative flex flex-col py-2 md:py-5 overflow-hidden">
+        <div className="!bg-[#01052f] w-full relative flex flex-col py-2 md:py-5 overflow-hidden z-20">
             <HomeNavbar
                 scrollToSection={scrollToSection}
                 featuresRef={featuresRef}
@@ -75,10 +77,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                             </button>
                         </div> */}
                     </div>
-
+                   <div className='flex justify-between'>
                     {/* Content Section */}
-                    <div className="lg:w-1/2 lg:pr-8">
-                        <h1 className="text-2xl md:text-4xl font-semibold mb-4 capitalize text-white">
+                    <div className="lg:w-1/2 lg:pr-8 xl:w-[80vw] xl:mx-auto xl:flex xl:flex-col xl:justify-center xl:items-center">
+                        <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold mb-4 capitalize text-white xl:text-center">
                             <span className="text-primary">AI front office </span> <br />
                             for healthcare agents
                         </h1>
@@ -113,6 +115,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                                 <p className="text-lg capitalize">Treatment Plans</p>
                             </div>
                         </div>
+                    </div>
+                    <div className='hidden xl:block xl:w-1/2 h-[420px]'>
+                        <img src={ai} alt=""  className='w-full h-full object-cover rounded-xl'/>
+                    </div>
                     </div>
                 </div>
             </div>

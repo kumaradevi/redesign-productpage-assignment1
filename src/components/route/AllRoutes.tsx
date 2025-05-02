@@ -8,6 +8,7 @@ import appConfig from '@/configs/app.config'
 import { useAuth } from '@/auth'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import type { LayoutType } from '@/@types/theme'
+import Home from '@/pages/Home'
 
 interface ViewsProps {
     pageContainerType?: 'default' | 'gutterless' | 'contained'
@@ -26,7 +27,8 @@ const AllRoutes = (props: AllRoutesProps) => {
             <Route path="/" element={<ProtectedRoute />}>
                 <Route
                     path="/"
-                    element={<Navigate replace to={authenticatedEntryPath} />}
+                    // element={<Navigate replace to={authenticatedEntryPath} />}
+                    element={<Home/>}
                 />
                 {protectedRoutes.map((route, index) => (
                     <Route
